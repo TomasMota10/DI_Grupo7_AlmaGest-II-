@@ -1,0 +1,18 @@
+.centrar-form{
+    padding-top: 120px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 280px;
+    padding-right: 280px;
+}
+
+.margin-lr{
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.disabled{
+    cursor: not-allowed;
+    pointer-events: none;
+}
