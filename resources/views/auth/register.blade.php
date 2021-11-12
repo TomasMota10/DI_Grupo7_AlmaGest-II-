@@ -66,7 +66,7 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="inputPassword1" class="col-sm-2 control-label">Confirmación</label>
+                  <label for="inputPassword1" class="col-sm-2 control-label">Repite Contraseña</label>
 
                   <div class="col-sm-10">
                   <input id="password-confirm" placeholder="Confirmación" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">

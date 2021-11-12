@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use App\User;
+use App\Companies;
 
 class UserController extends Controller
 {
@@ -63,7 +64,8 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = User::findOrFail($id);
-        return view('usuarios.editar',compact('user'));
+        $companies = Companies::all();
+        return view('usuarios.editar',compact('user','companies'));
     }
 
     /**

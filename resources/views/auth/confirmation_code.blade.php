@@ -5,13 +5,13 @@
 </head>
 <body>
     <h2>
-      Hola {{ $firstname }}, gracias por registrarte en <strong> nuestra Aplicación</strong>!
+      Bienvenido a AlmaGest {{ $firstname }}, vamos a por el ultimo paso <strong> para que puedas usar nuestra App!</strong>!
     </h2>
-    <p>Por favor confirma tu correo electrónico.</p>
+    <p>Tendras que confirmar tu correo para que su cuenta se registre en nuestro sistema</p>
     <p>Para ello simplemente debes hacer click en el siguiente enlace:</p>
 
     <a href="{{ url('/register/verify/' . $code) }}">
-        Clic para confirmar tu email
+        Haga click aqui para confirmar este email.
     </a>
 </body>
 </html>

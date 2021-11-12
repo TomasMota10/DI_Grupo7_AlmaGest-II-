@@ -6,11 +6,11 @@
 
 @include('partials.errors')
 
-<div class="centrar-form">
+ <!-- <div class="centrar-form">
           <!-- Horizontal Form -->          
           <div class="box box-info">
             <div class="box-header with-border">
-              <h3 class="box-title">Bienvenido</h3>
+              <h3 class="box-title">Bienvenido a AlmaGest</h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
@@ -34,7 +34,7 @@
                 </div>
                 <div class="form-group">
                   <div class="col-sm-offset-2 col-sm-10">
-                  <button type="submit" class="btn btn-block btn-info">Login</button>
+                  <button type="submit" class="btn btn-block btn-info">Iniciar Sesión</button>
                   <a href="{{ url('/register/form') }}" class="btn btn-block btn-primary">Registrarse</a>
                     <div class="checkbox">
                       <label>
@@ -43,13 +43,13 @@
                     </div>
                     @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
+                                        {{ __('¿Has olvidado tu contraseña?') }}
                                     </a>
                     @endif
                     
                   </div>
                 </div>
-              </div>
+              </div>  
 
 <!--<div class="container">
     <div class="row justify-content-center">

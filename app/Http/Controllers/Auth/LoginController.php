@@ -50,17 +50,17 @@ class LoginController extends Controller
                     return redirect('/usuarios');
                 }
                 else{
-                    return redirect('/login')->with('message','Espere a que el Administrador active su cuenta');
+                    return redirect('/login')->with('message','El Administrador activara su cuenta proximamente...');
                 }
 
             }
             else{
-                return redirect('/login')->with('message','Confirme su email en el correo');
+                return redirect('/login')->with('message','Mire su correo para confirmar su cuenta.');
             }
     
         }
         else{
-            return redirect('/login')->with('message','Permiso denegado');
+            return redirect('/login')->with('message','Permiso denegado: Usted no tiene permiso para entrar.');
         }
     }
 }

@@ -84,7 +84,7 @@ class RegisterController extends Controller
         ]);
 
         Mail::send('auth.confirmation_code', $data, function($message) use ($data){
-            $message -> to($data['email'], $data['firstname'])->subject('Por favor confirma tu correo');
+            $message -> to($data['email'], $data['firstname'])->subject('Bienvenido a AlmaGest!. Por favor confirme su correo.');
         });
 
         return $user;
