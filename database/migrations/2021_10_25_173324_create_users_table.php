@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->unsignedBigInteger('company_id');
             $table->foreign('company_id')->references('id')->on('companies')->onUpdate("cascade");
             $table->string('type',1)->default('U');
+            // $table->string('code',25)->default('null');
             $table->tinyInteger('email_confirmed')->default(0);
             $table->tinyInteger('actived')->default(0);
             $table->tinyInteger('iscontact')->default(0);
