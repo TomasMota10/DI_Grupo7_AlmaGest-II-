@@ -78,12 +78,14 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $this->validateUser($request);
+        $company = Companies::where('name', $request['company_id'])->first();
+        $usuario = User::findOrFail($id);
 
         $user = array(
             'firstname' => $request->firstname,
             'secondname' => $request->secondname,
             'email' => $request->email,
-            'company_id' => $request->company_id,
+            'company_id' => $company['id'],
             'password' => Hash::make($request->password)
         );
 

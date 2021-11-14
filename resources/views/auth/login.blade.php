@@ -10,7 +10,7 @@
           <!-- Horizontal Form -->          
           <div class="box box-info">
             <div class="box-header with-border">
-              <h3 class="box-title">Bienvenido a AlmaGest</h3>
+              <h3 class="box-title">Inicie Sesión en AlmaGest</h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
@@ -33,9 +33,6 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <div class="col-sm-offset-2 col-sm-10">
-                  <button type="submit" class="btn btn-block btn-info">Iniciar Sesión</button>
-                  <a href="{{ url('/register/form') }}" class="btn btn-block btn-primary">Registrarse</a>
                     <div class="checkbox">
                       <label>
                         <input type="checkbox"> Recuérdame
@@ -46,7 +43,9 @@
                                         {{ __('¿Has olvidado tu contraseña?') }}
                                     </a>
                     @endif
-                    
+                    <div class="card-footer">
+                    <button type="submit" class="btn btn-info">Iniciar Sesión</button>
+                    <a href="{{ url('/register/form') }}" class="btn btn-primary">Registrarse</a>
                   </div>
                 </div>
               </div>  

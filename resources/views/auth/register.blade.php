@@ -75,12 +75,13 @@
 
                 <div class="form-group">
                   <div class="col-sm-offset-2 col-sm-10">
-                  <button type="submit" class="btn btn-block btn-primary">Registrarse</button>
+                  <button type="submit" class="btn btn-info">Registrarse</button>
+                  <button  onclick="javascript:window.history.back();" class="btn btn-primary">Cancelar</button>
                   <div class="checkbox">
 
                 </div>
             </div>
-</form>
+                </form>
                 </div>
               </div>
 

@@ -45,8 +45,6 @@
                   </div>
                 </div>
 
-                
-
                 <div class="form-group">
                   <label for="inputEmail" class="col-sm-2 control-label">Email</label>
 
@@ -64,16 +62,16 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="inputPassword1" class="col-sm-2 control-label">Confirmación</label>
+                  <label for="inputPassword1" class="col-sm-2 control-label">Repite Contraseña</label>
 
                   <div class="col-sm-10">
-                  <input id="password-confirm" placeholder="Confirmación" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                  <input id="password-confirm" placeholder="Repite Contraseña" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                   </div>
                 </div>
 
                 <div class="form-group">
                   <div class="col-sm-offset-2 col-sm-10">
-                  <button type="submit" class="btn btn-block btn-primary">Actualizar</button>
+                  <button type="submit" class="btn btn-primary">Actualizar</button>
                 <div class="checkbox">
 
           </div>
