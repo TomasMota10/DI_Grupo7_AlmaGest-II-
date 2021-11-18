@@ -72,6 +72,7 @@
                 <div class="form-group">
                   <div class="col-sm-offset-2 col-sm-10">
                   <button type="submit" class="btn btn-primary">Actualizar</button>
+                  <button  onclick="javascript:window.history.back();" class="btn btn-info">Cancelar</button>
                 <div class="checkbox">
 
           </div>
