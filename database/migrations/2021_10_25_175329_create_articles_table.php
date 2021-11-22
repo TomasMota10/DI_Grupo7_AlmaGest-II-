@@ -10,7 +10,8 @@ class CreateArticlesTable extends Migration{
      *
      * @return void
      */
-    public function up(){
+    public function up()
+    {
         Schema::create('articles', function (Blueprint $table) {
             $table->engine="InnoDB";
             $table->bigIncrements('id')->unique();
