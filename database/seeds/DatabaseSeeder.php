@@ -19,20 +19,20 @@ class DatabaseSeeder extends Seeder
         factory(\App\Bank_entity::class, 10) -> create();
         factory(\App\Discount::class, 10) -> create();
         factory(\App\Companies::class, 10) -> create();
-       /**factory(\App\Families::class, 10) -> create();
+        factory(\App\Families::class, 10) -> create();
         factory(\App\Article::class, 10) -> create();
-        factory(\App\Products::class, 10) -> create();
-        factory(\App\Orders::class, 10) -> create();
-        factory(\App\Delivery_note::class, 10) -> create();
+        // factory(\App\Products::class, 10) -> create();
+        // factory(\App\Orders::class, 10) -> create();
+        // factory(\App\Delivery_note::class, 10) -> create();
 
-        factory(\App\Invoice::class, 10) -> create();
-        factory(\App\Order_lines::class, 10) -> create();
-        factory(\App\Delivery_note_lines::class, 10) -> create();
-        factory(\App\Contain_art_orderline::class, 10) -> create();
-        factory(\App\Contain_art_delivlines::class, 10) -> create();
+        // factory(\App\Invoice::class, 10) -> create();
+        // factory(\App\Order_lines::class, 10) -> create();
+        // factory(\App\Delivery_note_lines::class, 10) -> create();
+        // factory(\App\Contain_art_orderline::class, 10) -> create();
+        // factory(\App\Contain_art_delivlines::class, 10) -> create();
 
-        factory(\App\Invoice_lines::class, 10) -> create();
-        factory(\App\Contain_art_invlines::class, 10) -> create();*/
+        // factory(\App\Invoice_lines::class, 10) -> create();
+        // factory(\App\Contain_art_invlines::class, 10) -> create();*/
 
         factory(\App\User::class, 10) -> create();
         factory(\App\User::class)->create(

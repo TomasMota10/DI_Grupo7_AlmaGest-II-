@@ -16,3 +16,7 @@
     cursor: not-allowed;
     pointer-events: none;
 }
+
+.btn-right{
+    margin-left:780px;
+}

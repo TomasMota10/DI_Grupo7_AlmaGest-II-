@@ -24,7 +24,8 @@ class UserController extends Controller
     public function index()
     {
         $users = User::where('deleted','=',0)->get();
-        return view('usuarios.listado', compact('users'));
+        $companies = Companies::all();
+        return view('usuarios.listado', compact('users','companies'));
     }
 
     /**

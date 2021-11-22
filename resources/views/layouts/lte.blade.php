@@ -14,6 +14,8 @@
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="{{asset('assets/dist/css/skins/_all-skins.min.css')}}">
 
+  <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
+
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -72,10 +74,20 @@
     <div class="navbar-custom-menu">
     <ul class="sidebar-menu" data-widget="tree">
     <li>
+      <a href="/usuarios">
+        <i class="fa fa-user"></i><span>{{ __('Usuarios') }}</span>
+      </a>
+    </li>
+    <li>
+      <a href="/articulos">
+        <i class="fa fa-archive"></i><span>{{ __('Artículos') }}</span>
+      </a>
+    </li>
+    <li>
         <a href="{{ route('logout') }}"
             onclick="event.preventDefault();
             document.getElementById('logout-form').submit();">
-            <i class="fa fa-user"></i><span>{{ __('Cerrar sesión') }}</span>
+            <i class="fa fa-power-off"></i><span>{{ __('Cerrar sesión') }}</span>
         </a>
 
         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
