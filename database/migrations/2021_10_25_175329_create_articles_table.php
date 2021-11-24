@@ -4,7 +4,8 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateArticlesTable extends Migration{
+class CreateArticlesTable extends Migration
+{
     /**
      * Run the migrations.
      *
@@ -26,10 +27,10 @@ class CreateArticlesTable extends Migration{
             $table->foreign('family_id')->references('id')->on('families')->onUpdate("cascade");
             $table->tinyInteger('deleted')->default(0);
             $table->timestamps();
-    });
-}
+        });
+    }
 
-/**
+    /**
      * Reverse the migrations.
      *
      * @return void

@@ -32,5 +32,4 @@ Route::get('/usuarios/{id}/softdelete','UserController@softDelete');
 Route::get('/articulos/{id}/softdelete','ArticleController@softDelete');
 
 Route::get('/register/form','Auth\RegisterController@index');
-
 #Route::get('/home', 'HomeController@index')->name('home');
