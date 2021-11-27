@@ -5,7 +5,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title">Insertar Artículo</h4>
+                    <h4 class="modal-title">Nuevo Artículo</h4>
             </div>
             <div class="modal-body">
             <form action="/articulos" id="form-general" class="form-horizontal form--label-right" method="POST" autocomplete="off">
@@ -129,14 +129,13 @@
                   <label for="inputDescription" class="col-sm-2 control-label">Descripción</label>
 
                 <div class="col-sm-10">
-                  <textarea id="description" class="form-control" name="description" rows="4" cols="50"></textarea>
+                  <textarea id="description" class="form-control" name="description" placeholder="Descripción del producto" rows="4" cols="50"></textarea>
                 </div>
 
             </div>
 
-              <div class="modal-footer">
-            <button type="button" class="btn btn-block pull-left" data-dismiss="modal">Cancelar</button>
-            <button type="submit" class="btn btn-block btn-primary">Confirmar</button>
+            <div class="modal-footer">
+              <button type="submit" class="btn pull-rigth btn-primary">Confirmar</button>
             </div>
 
             </form>

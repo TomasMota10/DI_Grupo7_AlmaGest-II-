@@ -92,7 +92,7 @@ class UserController extends Controller
         );
 
         User::whereId($id)->update($user);
-        return redirect('/usuarios')->with('message','Usuario actualizado correctamente');
+        return redirect('/usuarios')->with('message','El usuario ha sido actualizado correctamente');
     }
 
     /**
@@ -112,7 +112,7 @@ class UserController extends Controller
         $user->deleted = 1;
         $user->save();
 
-        return redirect('/usuarios')->with('message','Usuario eliminado');
+        return redirect('/usuarios')->with('message','El usuario ha sido eliminado con éxito');
 
     }
 
@@ -151,7 +151,7 @@ class UserController extends Controller
         $user->actived = 1;
         $user->save();
 
-        return redirect('/usuarios')->with('message','Usuario activado');
+        return redirect('/usuarios')->with('message','El usuario ha sido activado con éxito');
     }
 
     public function desactivate($id){
@@ -165,7 +165,7 @@ class UserController extends Controller
         $user->actived = 0;
         $user->save();
 
-        return redirect('/usuarios')->with('message','Usuario desactivado');
+        return redirect('/usuarios')->with('message','El usuario ha sido desactivado');
 
     }
 }

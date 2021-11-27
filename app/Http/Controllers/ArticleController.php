@@ -83,7 +83,7 @@ class ArticleController extends Controller
             'description' => $request['description'],
         ]);
 
-        return redirect('/articulos')->with('message','Artículo insertado correctamente');
+        return redirect('/articulos')->with('message','El artículo fue añadido con éxito');
 
     }
 
@@ -143,7 +143,7 @@ class ArticleController extends Controller
         );
 
         Articles::whereId($id)->update($article);
-        return redirect('/articulos')->with('message','Artículo actualizado correctamente');
+        return redirect('/articulos')->with('message','El artículo ha sido actualizado correctamente');
     }
 
     /**
@@ -162,12 +162,12 @@ class ArticleController extends Controller
 
         /* Si no existe, redirige a la ruta principal */
         if (! $article)
-            return redirect('/') ->with('message','El artículo no existe o ya ha sido eliminado');
+            return redirect('/') ->with('message','El artículo no se encuentra disponible o ya ha sido eliminado');
 
         $article->deleted = 1;
         $article->save();
 
-        return redirect('/articulos')->with('message','Artículo eliminado');
+        return redirect('/articulos')->with('message','El artículo ha sido eliminado con éxito');
     }
 
     public function validateArticle(Request $request){
