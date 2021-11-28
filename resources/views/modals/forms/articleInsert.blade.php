@@ -5,7 +5,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title">Insertar Artículo</h4>
+                    <h4 class="modal-title">Añadir un nuevo Artículo</h4>
             </div>
             <div class="modal-body">
             <form action="/articulos" id="form-general" class="form-horizontal form--label-right" method="POST" autocomplete="off">
