@@ -5,7 +5,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title">Nuevo Artículo</h4>
+                    <h4 class="modal-title">Insertar Artículo</h4>
             </div>
             <div class="modal-body">
             <form action="/articulos" id="form-general" class="form-horizontal form--label-right" method="POST" autocomplete="off">
@@ -59,9 +59,10 @@
               </div>
 
               <div class="form-group">
-                  <label for="inputWeight" class="col-sm-2 control-label">Peso</label>
-
-                  <div class="col-sm-10">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Peso</b>&nbsp;&nbsp;&nbsp;<input class="rb1" value="peso" name="rb1" type="radio" id="rbsize1" checked="true">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Tamaño</b>&nbsp;&nbsp;&nbsp;<input class="rb1" value="tamaño" name="rb1" type="radio" id="rbsize1">
+                  <label for="inputWeight" class="col-sm-2 control-label">&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                  <div class="col-sm-10" id="divPeso">
                     <select id="weight" class="form-control select2" name="weight" style="width: 100%;">
                     @foreach($peso as $p)  
                       <option>{{$p}}</option>
@@ -71,8 +72,8 @@
                   </div>
               </div>
 
-            <div class="form-group">
-                <label for="inputSize" class="col-sm-2 control-label">Tamaño</label>
+            <div id="divTamaño" class="form-group" style="display:none;">
+                <label for="inputSize" class="col-sm-2 control-label">&nbsp;&nbsp;&nbsp;&nbsp;</label>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="rb" value="valorNum" name="rb" type="radio" id="rbsize1" checked="true"> Valor numérico
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="rb" value="valorSimple" name="rb" type="radio" id="rbsize2"> Valor simple
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="rb" value="valorComp" name="rb" type="radio" id="rbsize3"> Valor compuesto
@@ -124,20 +125,18 @@
                     <!--<input type="number" placeholder="Compañía" class="form-control" name="company_id" required autocomplete="company_id">-->
                   </div>
             </div>
-
+ 
             <div class="form-group">
                   <label for="inputDescription" class="col-sm-2 control-label">Descripción</label>
 
                 <div class="col-sm-10">
-                  <textarea id="description" class="form-control" name="description" placeholder="Descripción del producto" rows="4" cols="50"></textarea>
+                  <textarea id="description" class="form-control" name="description" rows="4" cols="50"></textarea>
                 </div>
 
             </div>
 
-            <div class="modal-footer">
-              <button type="submit" class="btn pull-rigth btn-primary">Confirmar</button>
-            </div>
-
+              <div class="modal-footer">
+                <button type="submit" class="btn pull-rigth btn-primary">Añadir</button>
             </form>
             </div>
         </div>
@@ -177,6 +176,21 @@
                 $("#valorSimple1").css("display", "none");
                 $("#valorNum1").css("display", "none");
                 $("#valorComp1").css("display","block");
+            }
+    });
+});
+$(document).ready(function(){
+        $(".rb1").click(function(evento){
+          
+            var valor = $(this).val();
+          
+            if(valor == 'peso'){
+                $("#divPeso").css("display", "block");
+                $("#divTamaño").css("display", "none");
+            }
+            else if(valor == 'tamaño'){
+                $("#divPeso").css("display", "none");
+                $("#divTamaño").css("display", "block");
             }
     });
 });

@@ -4,9 +4,8 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">                  
-                  <span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title">Modificar Articulo</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">                  <span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Editar Articulo</h4>
             </div>
             <div class="modal-body">
             <form action="/articulos/{{$article -> id}}" id="form-general" class="form-horizontal form--label-right" method="POST" autocomplete="off">
@@ -61,9 +60,10 @@
               </div>
 
               <div class="form-group">
-                  <label for="inputWeight" class="col-sm-2 control-label">Peso</label>
-
-                  <div class="col-sm-10">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Peso</b>&nbsp;&nbsp;&nbsp;<input class="rb2" value="peso" name="rb2" type="radio" id="rbsize1" checked="true">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Tamaño</b>&nbsp;&nbsp;&nbsp;<input class="rb2" value="tamaño" name="rb2" type="radio" id="rbsize1">
+                  <label for="inputWeight" class="col-sm-2 control-label">&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                  <div class="col-sm-10" id="divPeso1">
                     <select id="weight" class="form-control select2" name="weight" style="width: 100%;">
                     @foreach($peso as $p)  
                       <option>{{$p}}</option>
@@ -73,7 +73,7 @@
                   </div>
               </div>
 
-            <div class="form-group">
+            <div class="form-group" id="divTamaño1" style="display:none;">
                 <label for="inputSize" class="col-sm-2 control-label">Tamaño</label>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="rb1" value="valorNum{{$article->id}}" name="rb1" type="radio" id="rbsize11" checked="true"> Valor numérico
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="rb1" value="valorSimple{{$article->id}}" name="rb1" type="radio" id="rbsize22"> Valor simple
@@ -131,13 +131,14 @@
                   <label for="inputDescription" class="col-sm-2 control-label">Descripción</label>
 
                 <div class="col-sm-10">
-                  <textarea id="description" value="{{ $article -> description }}" class="form-control" name="description" placeholder="Descripción del producto" rows="4" cols="50"></textarea>
+                  <textarea id="description" value="{{ $article -> description }}" class="form-control" name="description" rows="4" cols="50"></textarea>
                 </div>
 
             </div>
 
-            <div class="modal-footer">
-              <button type="submit" class="btn pull-rigth btn-primary">Actualizar</button>
+              <div class="modal-footer">
+                <button type="submit" class="btn pull-rigth btn-primary">Actualizar</button>
+            </form>
             </div>
 
             </form>
@@ -169,5 +170,19 @@
             }
     });
 });
-
+$(document).ready(function(){
+        $(".rb2").click(function(evento){
+          
+            var valor = $(this).val();
+          
+            if(valor == 'peso'){
+                $("#divPeso1").css("display", "block");
+                $("#divTamaño1").css("display", "none");
+            }
+            else if(valor == 'tamaño'){
+                $("#divPeso1").css("display", "none");
+                $("#divTamaño1").css("display", "block");
+            }
+    });
+});
 </script>

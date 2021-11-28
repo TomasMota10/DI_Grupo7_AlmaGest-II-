@@ -63,7 +63,6 @@
                                       <div class="modal-footer">
                                         <a class="btn btn-danger btn"  href="/usuarios/{{$user->id}}/softdelete">Borrar</i></a>
                                         <button type="button" class="btn btn-primary"  data-dismiss="modal">Cancelar</button>
-
                                       </div>
                                     </div>
                                   </div>
