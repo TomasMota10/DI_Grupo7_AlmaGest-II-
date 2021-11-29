@@ -21,8 +21,8 @@ class CreateArticlesTable extends Migration
             $table->decimal('price_min', 10,0);
             $table->decimal('price_max', 10,0);
             $table->string('color_name', 20);
-            $table->decimal('weight', 8,2);
-            $table->string('size', 10);
+            $table->decimal('weight', 8,2)->nullable();
+            $table->string('size', 20)->nullable();
             $table->unsignedbigInteger('family_id');
             $table->foreign('family_id')->references('id')->on('families')->onUpdate("cascade");
             $table->tinyInteger('deleted')->default(0);

@@ -60,16 +60,21 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
         $family = Families::where('name',$request['family'])->first();
-        $size = '';
+        $size = null;
 
-        if($request['rb'] == 'valorNum'){
-            $size = $request['size1'];
-        }
-        else if($request['rb'] == 'valorSimple'){
-            $size = $request['size2'];
-        }
-        else if($request['rb'] == 'valorComp'){
-            $size = $request['size3'].' x '.$request['size4'];
+        if($request['rb1'] != 'peso'){
+
+            if($request['rb'] == 'valorNum'){
+                $size = $request['size1'];
+            }
+            else if($request['rb'] == 'valorSimple'){
+                $size = $request['size2'];
+            }
+            else if($request['rb'] == 'valorComp'){
+                $size = $request['size3'].' x '.$request['size4'];
+            }
+
+            $request['weight'] = null;
         }
 
         $article = Articles::create([
@@ -83,7 +88,7 @@ class ArticleController extends Controller
             'description' => $request['description'],
         ]);
 
-        return redirect('/articulos')->with('message','El artículo fue añadido con éxito');
+        return redirect('/articulos')->with('message','El artículo ha sido añadido correctamente');
 
     }
 
@@ -119,18 +124,24 @@ class ArticleController extends Controller
     public function update(Request $request, $id)
     {
         $family = Families::where('name',$request['family'])->first();
-        $size = '';
+        $size = null;
 
-        if($request['rb1'] == 'valorNum'.$id){
-            $size = $request['size1'];
-        }
-        else if($request['rb1'] == 'valorSimple'.$id){
-            $size = $request['size2'];
-        }
-        else if($request['rb1'] == 'valorComp'.$id){
-            $size = $request['size3'].' x '.$request['size4'];
-        }
+        if($request['rb2'] != 'peso'.$id){
 
+            if($request['rb1'] == 'valorNum'.$id){
+                $size = $request['size1'];
+            }
+            else if($request['rb1'] == 'valorSimple'.$id){
+                $size = $request['size2'];
+            }
+            else if($request['rb1'] == 'valorComp'.$id){
+                $size = $request['size3'].'x'.$request['size4'];
+            }
+
+            $request['weight'] = null;
+
+        }
+        
         $article = array(
             'name' => $request['name'],
             'price_min' => $request['price_min'],
@@ -162,12 +173,12 @@ class ArticleController extends Controller
 
         /* Si no existe, redirige a la ruta principal */
         if (! $article)
-            return redirect('/') ->with('message','El artículo no se encuentra disponible o ya ha sido eliminado');
+            return redirect('/') ->with('message','El artículo no se encuentra disponible o ha sido eliminado');
 
         $article->deleted = 1;
         $article->save();
 
-        return redirect('/articulos')->with('message','El artículo ha sido eliminado con éxito');
+        return redirect('/articulos')->with('message','El artículo ha sido eliminado correctamente');
     }
 
     public function validateArticle(Request $request){
@@ -189,7 +200,6 @@ class ArticleController extends Controller
             'weight.required' => __("El peso es obligatorio"),
             'size.required' => __("El tamaño es obligatorio"),
             'description.required' => __("La descripción es obligatoria")
-
         ]
         );  
     }

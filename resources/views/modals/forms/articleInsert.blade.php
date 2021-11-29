@@ -4,7 +4,8 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title">Añadir un nuevo Artículo</h4>
             </div>
             <div class="modal-body">
@@ -130,13 +131,15 @@
                   <label for="inputDescription" class="col-sm-2 control-label">Descripción</label>
 
                 <div class="col-sm-10">
-                  <textarea id="description" class="form-control" name="description" rows="4" cols="50"></textarea>
+                  <textarea id="description" placeholder="Descripción del producto." class="form-control" name="description" rows="4" cols="50"></textarea>
                 </div>
 
             </div>
 
               <div class="modal-footer">
-                <button type="submit" class="btn pull-rigth btn-primary">Añadir</button>
+            <button type="submit" class="btn btn-rigth btn-primary">Insertar</button>
+            </div>
+
             </form>
             </div>
         </div>

@@ -3,12 +3,13 @@
 @section('content')
 
 <div class="row">
+@include('modals.forms.articleInsert')
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
               <h3 class="box-title">Listado de artículos</h3>
               <a data-toggle="modal" data-target="#modal-artInsert" class="btn btn-success btn-right">Añadir</a>
-              @include('modals.forms.articleInsert')
+              
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -26,7 +27,7 @@
                 </thead>
                 <tbody>
 
-                @foreach($articles as $article)
+                @forelse($articles as $article)
                 <tr>
                     <td>{{ $article-> name }}</td>
                     <td>{{ $article-> description }}</td>
@@ -41,11 +42,13 @@
                       </a>
                     @include('modals.forms.articleEdit')
                       <a data-toggle="modal" data-target="#modalArtDelete-{{$article->id}}" class="btn btn-danger" title="Eliminar este artículo">Eliminar
-                    @include('modals.articleDelete')
                       </a>
+                    @include('modals.articleDelete')
                     </td>
                 </tr>
-                @endforeach
+                @empty
+                <h3>Oh oh, no se encuentra ningún producto disponible...</h3>
+                @endforelse
 
                 </tbody>
               </table>
@@ -57,4 +60,3 @@
         <!-- /.col -->
       </div>
 @endsection
-
