@@ -7,7 +7,7 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-        <h5 class="modal-title" id="exampleModalLabel">Borrar Artículo</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Eliminar Artículo</h5>
       </div>
       <div class="modal-body">
         ¿Estás seguro de eliminar el articulo {{$article->name}}?

@@ -13,7 +13,7 @@
                 @csrf @method('put')
 
               <div class="form-group">
-                  <label for="inputNombre" class="col-sm-2 control-label">Nombre</label>
+                  <label for="inputNombre" class="col-sm-2 control-label">Nombre del artículo</label>
 
                   <div class="col-sm-10">
                     <input type="text" value="{{ $article-> name }}" id="name" placeholder="Nombre" class="form-control" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>

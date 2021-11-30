@@ -16,7 +16,7 @@
               <table id="datatable" class="table table-bordered table-striped">
               <thead>
                 <tr>
-                  <th>Nombre</th>
+                  <th>Nombre del Artículo</th>
                   <th>Descripción</th>
                   <th>Precio min.</th>
                   <th>Precio max.</th>
@@ -47,7 +47,7 @@
                     </td>
                 </tr>
                 @empty
-                <h3>Oh oh, no se encuentra ningún producto disponible...</h3>
+                <h3>Oh oh, no se encuentra ningún artículo disponible...</h3>
                 @endforelse
 
                 </tbody>

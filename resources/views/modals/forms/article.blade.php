@@ -5,13 +5,13 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title">Insertar Artículo</h4>
+                    <h4 class="modal-title">Añadir artículo</h4>
             </div>
             <div class="modal-body">
             <form action="/articulos" id="form-general" class="form-horizontal form--label-right" method="POST" autocomplete="off">
                 @csrf
               <div class="form-group">
-                  <label for="inputNombre" class="col-sm-2 control-label">Nombre</label>
+                  <label for="inputNombre" class="col-sm-2 control-label">Nombre del artículo</label>
 
                   <div class="col-sm-10">
                     <input type="text" id="name" placeholder="Nombre" class="form-control" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
