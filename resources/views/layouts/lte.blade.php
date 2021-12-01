@@ -80,14 +80,14 @@
     </li>
     <li>
       <a href="/articulos">
-        <i class="fa fa-archive"></i><span>{{ __('Artículos') }}</span>
+        <i class="fa fa-shopping-bag"></i><span>{{ __('Artículos') }}</span>
       </a>
     </li>
     <li>
         <a href="{{ route('logout') }}"
             onclick="event.preventDefault();
             document.getElementById('logout-form').submit();">
-            <i class="fa fa-power-off"></i><span>{{ __('Cerrar sesión') }}</span>
+            <i class="fa fa-sign-out"></i><span>{{ __('Cerrar sesión') }}</span>
         </a>
 
         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

@@ -12,7 +12,7 @@
             <form action="/articulos" id="form-general" class="form-horizontal form--label-right" method="POST" autocomplete="off">
                 @csrf
               <div class="form-group">
-                  <label for="inputNombre" class="col-sm-2 control-label">Nombre del artículo</label>
+                  <label for="inputNombre" class="col-sm-2 control-label">Nombre del Artículo</label>
 
                   <div class="col-sm-10">
                     <input type="text" id="name" placeholder="Nombre" class="form-control" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
@@ -137,7 +137,7 @@
             </div>
 
               <div class="modal-footer">
-            <button type="submit" class="btn btn-rigth btn-primary">Insertar</button>
+            <button type="submit" class="btn btn-rigth btn-primary">Añadir</button>
             </div>
 
             </form>
