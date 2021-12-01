@@ -170,6 +170,7 @@
             }
     });
 });
+
 $(document).ready(function(){
         $(".rb2").click(function(evento){
           
