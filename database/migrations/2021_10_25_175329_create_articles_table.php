@@ -17,7 +17,7 @@ class CreateArticlesTable extends Migration
             $table->engine="InnoDB";
             $table->bigIncrements('id')->unique();
             $table->string('name', 50);
-            $table->string('description', 150);
+            $table->string('description', 150)->nullable();
             $table->decimal('price_min', 10,0);
             $table->decimal('price_max', 10,0);
             $table->string('color_name', 20);

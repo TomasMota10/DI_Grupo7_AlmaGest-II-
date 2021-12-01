@@ -75,7 +75,7 @@
     <ul class="sidebar-menu" data-widget="tree">
     <li>
       <a href="/usuarios">
-        <i class="fa fa-user"></i><span>{{ __('Usuarios') }}</span>
+        <i class="fa fa-users"></i><span>{{ __('Usuarios') }}</span>
       </a>
     </li>
     <li>

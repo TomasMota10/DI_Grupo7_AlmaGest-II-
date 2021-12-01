@@ -6,7 +6,7 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">                  
                   <span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title">Editar Articulo</h4>
+                    <h4 class="modal-title">Editar Artículo</h4>
             </div>
             <div class="modal-body">
             <form action="/articulos/{{$article -> id}}" id="form-general" class="form-horizontal form--label-right" method="POST" autocomplete="off">
