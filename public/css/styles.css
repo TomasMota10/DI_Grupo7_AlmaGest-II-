@@ -7,6 +7,21 @@
     padding-right: 280px;
 }
 
+.centrar{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.centrar2{
+    border: 1px solid #333;
+    width: 100;
+}
+
+.centrar-celda{
+    text-align: center;
+}
+
 .margin-lr{
     padding-left: 100px;
     padding-right: 100px;

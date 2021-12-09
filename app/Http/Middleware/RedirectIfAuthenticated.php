@@ -18,11 +18,19 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next, $guard = null)
     {
+
         if (Auth::guard($guard)->check()) {
             return $next($request);
-            //return redirect('/usuarios');
+            // return $next($request);
+            // if(auth()->user()->type === 'a'){
+            //     return redirect('/usuarios');
+            // }
+            // else if(auth()->user()->type === 'u'){
+            //     return redirect('/company');
+            // }
+            
         }
-
+        
         return $next($request);
     }
 }

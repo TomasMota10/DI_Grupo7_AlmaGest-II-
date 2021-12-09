@@ -23,6 +23,10 @@ Route::resource('/usuarios','UserController');
 
 Route::resource('/articulos','ArticleController');
 
+Route::resource('/company','CompanyController');
+
+Route::get('/company/ficha/{id}','CompanyController@downloadResources');
+
 Route::get('/usuarios/activate/{id}','UserController@activate');
 
 Route::get('/usuarios/desactivate/{id}','UserController@desactivate');
@@ -32,4 +36,6 @@ Route::get('/usuarios/{id}/softdelete','UserController@softDelete');
 Route::get('/articulos/{id}/softdelete','ArticleController@softDelete');
 
 Route::get('/register/form','Auth\RegisterController@index');
+
+
 #Route::get('/home', 'HomeController@index')->name('home');

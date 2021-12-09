@@ -28,7 +28,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = "/usuarios";
+    protected $redirectTo = "/login";
 
     /**
      * Create a new controller instance.
@@ -42,12 +42,17 @@ class LoginController extends Controller
 
     protected function authenticated(Request $request, $user){
 
-        if ($user->type == 'U'){
-
             if($user->email_confirmed == 1){
 
                 if($user->actived == 1){
-                    return redirect('/usuarios');
+
+                    if($user->type == 'a'){
+                        return redirect('/usuarios');
+                    }
+                    else if($user->type == 'u'){
+                        return redirect('/company');
+                    }
+                    
                 }
                 else{
                     return redirect('/login')->with('message','El Administrador activara su cuenta proximamente...');
@@ -58,9 +63,5 @@ class LoginController extends Controller
                 return redirect('/login')->with('message','Mire su correo para confirmar su cuenta.');
             }
     
-        }
-        else{
-            return redirect('/login')->with('message','Permiso denegado: Usted no tiene permiso para entrar.');
-        }
     }
 }

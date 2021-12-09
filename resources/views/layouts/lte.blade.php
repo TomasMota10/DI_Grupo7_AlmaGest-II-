@@ -74,13 +74,23 @@
     <div class="navbar-custom-menu">
     <ul class="sidebar-menu" data-widget="tree">
     <li>
-      <a href="/usuarios">
+      <a href="/usuarios" style="{{auth()->user()->type === 'u' ? 'display:none' : '' }}">
         <i class="fa fa-users"></i><span>{{ __('Usuarios') }}</span>
       </a>
     </li>
     <li>
-      <a href="/articulos">
+      <a href="/articulos" style="{{auth()->user()->type === 'u' ? 'display:none' : '' }}">
         <i class="fa fa-shopping-bag"></i><span>{{ __('Artículos') }}</span>
+      </a>
+    </li>
+    <li>
+      <a href="/company" style="{{auth()->user()->type === 'a' ? 'display:none' : '' }}">
+        <i class="fa fa-briefcase"></i><span>{{ __('Datos Empresa') }}</span>
+      </a>
+    </li>
+    <li>
+      <a href="#" style="{{auth()->user()->type === 'a' ? 'display:none' : '' }}">
+        <i class="fa fa-truck"></i><span>{{ __('Pedidos') }}</span>
       </a>
     </li>
     <li>
@@ -94,6 +104,7 @@
             @csrf
         </form>
     </li>
+    </ul>    
   </ul>
   </div>
      

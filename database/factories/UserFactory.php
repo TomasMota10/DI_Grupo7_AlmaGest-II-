@@ -23,6 +23,6 @@ $factory->define(User::class, function (Faker $faker) {
         'email' => $faker -> email,
         'password' => $faker -> password,
         'company_id' => 1,
-        'type' => 'U'
+        'type' => 'u'
     ];
 });
