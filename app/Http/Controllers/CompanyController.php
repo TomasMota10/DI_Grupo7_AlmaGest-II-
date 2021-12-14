@@ -150,7 +150,7 @@ class CompanyController extends Controller
 
     public function sendEmail(Request $request){
 
-        $emails = ['cristianatienza26@gmail.com','c.atienza@cesjuanpablosegundocadiz.es'];
+        $emails = ['tomasmotasanchez14@gmail.com','mota.satom20@cadiz.salesianos.edu'];
         $files = [(public_path('/') . 'fichaEmpresa.pdf') , (public_path('/') . 'catalogo.pdf')];
 
         foreach($files as $file){
