@@ -43,6 +43,7 @@ class DatabaseSeeder extends Seeder
             'type'=> 'a',
             'password' => Hash::make('12345678'),
             'actived' => 1,
+            'code' => null,
             'email_confirmed' => 1]
         );
         // $this->call(UsersTableSeeder::class);

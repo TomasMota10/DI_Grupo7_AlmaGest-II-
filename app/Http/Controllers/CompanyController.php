@@ -13,6 +13,7 @@ use App\Families;
 use App\Bank_entity;
 use App\Discount;
 use App\Products;
+use Illuminate\Support\Facades\Mail;
 use PDF;
 
 class CompanyController extends Controller
@@ -107,10 +108,10 @@ class CompanyController extends Controller
         );
 
         Companies::whereId($id)->update($company);
-        return redirect('/company')->with('message','Datos de la compañía actualizados con éxito');
+        return redirect('/company')->with('message','Los datos de la compañía han sido actualizados correctamente.');
     }
 
-    public function downloadResources()
+    public function downloadFicha()
     {
         $company = Companies::select('companies.name', 'companies.address', 'companies.city', 
         'companies.cif', 'companies.email', 'companies.phone','delivery_terms.description as dt_desc',
@@ -120,7 +121,18 @@ class CompanyController extends Controller
         ->join('transports','companies.transport_id','=','transports.id')
         ->join('bank_entity','companies.bank_entity_id','=','bank_entity.id')
         ->join('payment_terms','companies.payment_term_id','=','payment_terms.id')
-        ->where('companies.id','=',auth()->user()->company_id)->get();
+        ->where('companies.id','=',auth()->user()->company_id)->first();
+
+        $pdf = PDF::loadView('content.fichaEmpresa', ['company' => $company])
+        ->save(public_path('/') . 'fichaEmpresa.pdf');
+        
+        return PDF::loadView('content.fichaEmpresa', ['company' => $company])
+        ->stream('fichaEmpresa.pdf');
+    }
+
+    public function downloadCatalogo(){
+
+        $company = Companies::find(auth()->user()->company_id);
 
         $products = Products::select('products.id as p_id','families.name as f_name','articles.name as a_name','articles.description as a_desc','products.price as p_price', 'articles.color_name as a_color','articles.weight as a_weight','articles.size as a_size')
         ->join('articles','products.article_id', '=', 'articles.id')
@@ -128,11 +140,35 @@ class CompanyController extends Controller
         ->join('companies','products.company_id','=','companies.id')
         ->where('products.company_id','=', auth()->user()->company_id)->get();
 
-        $pdf1 = PDF::loadView('content.fichaEmpresa', ['company' => $company])
-        ->save(public_path().'/ficha_empresa.pdf');;
+        $pdf = PDF::loadView('content.catalogo', ['products' => $products, 'company' => $company])
+        ->save(public_path('/') . 'catalogo.pdf');
 
-        $pdf2 = PDF::loadView('content.catalogo', ['products' => $products, 'company' => $company])
-        ->save(public_path().'/catalogo.pdf');
+        return PDF::loadView('content.catalogo', ['products' => $products, 'company' => $company])
+        ->stream('catalogo.pdf');
+
+    }
+
+    public function sendEmail(Request $request){
+
+        $emails = ['cristianatienza26@gmail.com','c.atienza@cesjuanpablosegundocadiz.es'];
+        $files = [(public_path('/') . 'fichaEmpresa.pdf') , (public_path('/') . 'catalogo.pdf')];
+
+        foreach($files as $file){
+            if(file_exists($file)){
+                dd($file);
+                return redirect('/company')->with('message','Falta');
+            }    
+        }
+        
+        Mail::send('content.mensajePDFs', [], function($message) use ($emails,$files){
+            $message->to($emails)->subject('PDFs email');
+            foreach ($files as $file){
+                $message->attach($file);
+            }
+        });
+
+        return redirect('/company')->with('message','Los archivos PDFs han sido enviados correctamente');
+
     }
 
     /**

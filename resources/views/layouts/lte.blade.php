@@ -85,7 +85,7 @@
     </li>
     <li>
       <a href="/company" style="{{auth()->user()->type === 'a' ? 'display:none' : '' }}">
-        <i class="fa fa-briefcase"></i><span>{{ __('Datos Empresa') }}</span>
+        <i class="fa fa-briefcase"></i><span>{{ __('Empresa') }}</span>
       </a>
     </li>
     <li>

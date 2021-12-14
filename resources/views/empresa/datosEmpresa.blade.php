@@ -7,7 +7,7 @@
           <!-- Horizontal Form -->
           <div class="box box-info">
             <div class="box-header with-border">
-              <h3 class="box-title">Datos Empresa</h3>
+              <h3 class="box-title">Datos de la Empresa</h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
@@ -159,7 +159,14 @@
             <div class="box-header with-border">
               <h3 class="box-title">Recursos</h3>
               <div class="col-sm-offset-2 col-sm-10">
-              <a href="{{ url('/company/ficha/'.$company->id) }}" class="btn btn-block btn-primary"><i class="fas fa-file-pdf"></i>Ver Ficha</a>
+              <a href="{{ url('/company/ficha/'.$company->id) }}" class="btn btn-block btn-primary"><i class="fas fa-file-pdf"></i>Descargar Fichas</a>
+              <a href="{{ url('/company/catalogo/'.$company->id) }}" class="btn btn-block btn-primary"><i class="fas fa-file-pdf"></i>Descargar Catálogo</a>
+              <div class="form-group form-group-default">
+              <form method="POST" action="{{ url('/company/sendEmail')}}">
+                @csrf
+                <button type="submit" class="btn btn-success">Enviar</button>
+                </form>
+              </div>
               </div>
             </div>
           </div>

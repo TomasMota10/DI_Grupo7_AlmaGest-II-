@@ -25,7 +25,11 @@ Route::resource('/articulos','ArticleController');
 
 Route::resource('/company','CompanyController');
 
-Route::get('/company/ficha/{id}','CompanyController@downloadResources');
+Route::get('/company/ficha/{id}','CompanyController@downloadFicha');
+
+Route::get('/company/catalogo/{id}', 'CompanyController@downloadCatalogo');
+
+Route::post('/company/sendEmail', 'CompanyController@sendEmail');
 
 Route::get('/usuarios/activate/{id}','UserController@activate');
 

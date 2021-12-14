@@ -41,7 +41,7 @@
   </tr>
   <tr>
     <td colspan="5">Plazo de entrega: {{$company->dt_desc}} &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-      Descuentos: {{$company->d_name}}<br>Portes: {{$company->price}}<br>Condiciones de pago: {{$company->pt_desc}}<br>Entidad bancaria: {{$company->be.name}}</td>
+      Descuentos: {{$company->d_name}}<br>Portes: {{$company->price}}<br>Condiciones de pago: {{$company->pt_desc}}<br>Entidad bancaria: {{$company->be_name}}</td>
   </tr>
 </tbody>
 </table>
