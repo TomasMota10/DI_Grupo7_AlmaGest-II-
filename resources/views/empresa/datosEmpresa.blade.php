@@ -159,12 +159,11 @@
             <div class="box-header with-border">
               <h3 class="box-title">Recursos</h3>
               <div class="col-sm-offset-2 col-sm-10">
-              <a href="{{ url('/company/ficha/'.$company->id) }}" class="btn btn-block btn-primary"><i class="fas fa-file-pdf"></i>Descargar Fichas</a>
-              <a href="{{ url('/company/catalogo/'.$company->id) }}" class="btn btn-block btn-primary"><i class="fas fa-file-pdf"></i>Descargar Catálogo</a>
-              <div class="form-group form-group-default">
+              <a href="{{ url('/company/ficha/'.$company->id) }}" class="btn btn-block btn-primary">Descargar Ficha</a>
+              <a href="{{ url('/company/catalogo/'.$company->id) }}" class="btn btn-block btn-primary">Descargar Catálogo</a>
               <form method="POST" action="{{ url('/company/sendEmail')}}">
                 @csrf
-                <button type="submit" class="btn btn-success">Enviar</button>
+                <button type="submit" class="btn btn-block btn-secondary">Enviar</button>
                 </form>
               </div>
               </div>

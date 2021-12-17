@@ -151,7 +151,7 @@ class UserController extends Controller
         $user->actived = 1;
         $user->save();
 
-        return redirect('/usuarios')->with('message','El usuario ha sido activado con éxito');
+        return redirect('/usuarios')->with('message','El usuario ha sido activado correctamente.');
     }
 
     public function desactivate($id){
@@ -165,7 +165,7 @@ class UserController extends Controller
         $user->actived = 0;
         $user->save();
 
-        return redirect('/usuarios')->with('message','El usuario ha sido desactivado');
+        return redirect('/usuarios')->with('message','El usuario ha sido desactivado correctamente.');
 
     }
 }
