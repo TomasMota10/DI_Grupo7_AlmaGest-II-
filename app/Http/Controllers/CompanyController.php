@@ -108,7 +108,7 @@ class CompanyController extends Controller
         );
 
         Companies::whereId($id)->update($company);
-        return redirect('/company')->with('message','Datos de la compañía actualizados con éxito');
+        return redirect('/company')->with('message','Los datos de la compañía han sido actualizados correctamente.');
     }
 
     public function downloadFicha()
@@ -158,9 +158,9 @@ class CompanyController extends Controller
         $files = [(public_path('/') . 'fichaEmpresa.pdf') , (public_path('/') . 'catalogo.pdf')];
 
         if(!file_exists($files[0])){
-            return redirect('/company')->with('message','el PDF de la ficha de empresa no existe, asegúrate de haberlo descargado');
+            return redirect('/company')->with('message','PDF de la ficha de empresa no existe, asegúrese de tenerlo descargado.');
         }else if(!file_exists($files[1])){
-            return redirect('/company')->with('message','el PDF del catálogo no existe, asegúrate de haberlo descargado');
+            return redirect('/company')->with('message','PDF del catálogo no existe, asegúrese de tenerlo descargado.');
         }
         
         Mail::send('content.mensajePDFs', [], function($message) use ($email,$files){
@@ -170,7 +170,7 @@ class CompanyController extends Controller
             }
         });
 
-        return redirect('/company')->with('message','Archivos pdfs enviados correctamente');
+        return redirect('/company')->with('message','PDFs enviados correctamente al correo electrónico.');
 
     }
 

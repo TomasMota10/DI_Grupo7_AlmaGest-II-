@@ -157,10 +157,10 @@
           <!-- Horizontal Form -->
           <div class="box box-info">
             <div class="box-header with-border">
-              <h3 class="box-title">Recursos</h3>
+              <h3 class="box-title">Funciones</h3>
               <div class="col-sm-offset-2 col-sm-10">
-              <a href="{{ url('/company/ficha/'.$company->id) }}" class="btn btn-block btn-primary">Descargar Ficha</a>
-              <a href="{{ url('/company/catalogo/'.$company->id) }}" class="btn btn-block btn-primary">Descargar Catálogo</a>
+              <a href="{{ url('/company/ficha/'.$company->id) }}" class="btn btn-rigth btn-primary">Descargar Ficha</a>
+              <a href="{{ url('/company/catalogo/'.$company->id) }}" class="btn btn-center btn-primary">Descargar Catálogo</a>
               <form method="POST" action="{{ url('/company/sendEmail')}}">
                 @csrf
                 <button type="submit" class="btn btn-block btn-secondary">Enviar</button>
