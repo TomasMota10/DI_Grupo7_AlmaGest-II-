@@ -142,7 +142,7 @@
 
                 <div class="form-group">
                   <div class="col-sm-offset-2 col-sm-10">
-                  <button type="submit" class="btn btn-block btn-primary">Actualizar</button>
+                  <button type="submit" class="btn btn-left btn-info">Actualizar</button>
                   <!-- <a href="{{ url('/company/ficha/'.$company->id) }}" class="btn btn-block btn-primary"><i class="fas fa-file-pdf"></i>Ver Ficha</a> -->
 
                 </div>
@@ -157,13 +157,13 @@
           <!-- Horizontal Form -->
           <div class="box box-info">
             <div class="box-header with-border">
-              <h3 class="box-title">Funciones</h3>
+              <h3 class="box-title">¿Que desea hacer con los PDFs?</h3>
               <div class="col-sm-offset-2 col-sm-10">
               <a href="{{ url('/company/ficha/'.$company->id) }}" class="btn btn-rigth btn-primary">Descargar Ficha</a>
               <a href="{{ url('/company/catalogo/'.$company->id) }}" class="btn btn-center btn-primary">Descargar Catálogo</a>
               <form method="POST" action="{{ url('/company/sendEmail')}}">
                 @csrf
-                <button type="submit" class="btn btn-block btn-secondary">Enviar</button>
+                <button type="submit" class="btn btn-rigth btn-success">Enviar</button>
                 </form>
               </div>
               </div>

@@ -164,7 +164,7 @@ class CompanyController extends Controller
         }
         
         Mail::send('content.mensajePDFs', [], function($message) use ($email,$files){
-            $message->to($email)->subject('Prueba pdfs');
+            $message->to($email)->subject('PDFs en pruebas');
             foreach ($files as $file){
                 $message->attach($file);
             }
