@@ -12,23 +12,23 @@
 <thead>
   <tr>
     <th colspan="4">Ficha de empresa</th>
-    <th>Código: 101010101010</th>
+    <th>Código: 23052001</th>
   </tr>
 </thead>
 <tbody>
   <tr>
-    <td rowspan="5">Logo</td>
-    <td>Nombre</td>
+    <td rowspan="5"><b><FONT COLOR="purple">AlmaGest</FONT></b></td>
+    <td>Nombre:</td>
     <td colspan="3">{{$company->name}}</td>
   </tr>
   <tr>
-    <td>Dirección</td>
+    <td>Dirección:</td>
     <td colspan="3">{{$company->address}}</td>
   </tr>
   <tr>
-    <td>Población</td>
+    <td>Población:</td>
     <td>{{$company->city}}</td>
-    <td>CIF/NIF</td>
+    <td>CIF/NIF:</td>
     <td>{{$company->cif}}</td>
   </tr>
   <tr>

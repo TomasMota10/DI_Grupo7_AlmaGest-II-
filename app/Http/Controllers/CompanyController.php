@@ -31,6 +31,7 @@ class CompanyController extends Controller
         $payment_terms = Payment_terms::all();
         $bank_entities = Bank_entity::all();
         $discounts = Discount::all();
+        $users = User::select('firstname','iscontact','company_id')->where('iscontact','=','1')->where('company_id','=', auth()->user()->company_id)->get();
 
         return view('empresa.datosEmpresa',compact('company','delivery_terms','transports','payment_terms','bank_entities','discounts'));
     }

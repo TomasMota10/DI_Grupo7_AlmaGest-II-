@@ -12,19 +12,19 @@
 <thead>
   <tr>
     <th colspan="3">Catálogo de productos</th>
-    <th colspan="5">{{$company->name}}</th>
+    <th colspan="5"><b><FONT COLOR="darkred">Nombre de Empresa: </FONT></b>{{$company->name}}</th>
   </tr>
 </thead>
 <tbody>
   <tr>
-    <td>ID</td>
-    <td>Familia</td>
-    <td>Producto</td>
-    <td>Descripción</td>
-    <td>Precio</td>
-    <td>Color</td>
-    <td>Peso</td>
-    <td>Tamaño</td>
+    <td><b>ID</b></td>
+    <td><b>Familia</b></td>
+    <td><b>Producto</b></td>
+    <td><b>Descripción</b></td>
+    <td><b>Precio</b></td>
+    <td><b>Color</b></td>
+    <td><b>Peso</b></td>
+    <td><b>Tamaño</b></td>
   </tr>
   @foreach($products as $p)
   <tr>

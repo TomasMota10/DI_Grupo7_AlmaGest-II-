@@ -1,1 +1,1 @@
-<p>PDFs</p>
+<p>Mensaje para PDFs</p>
