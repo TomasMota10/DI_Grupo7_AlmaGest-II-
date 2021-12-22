@@ -47,5 +47,32 @@ class DatabaseSeeder extends Seeder
             'email_confirmed' => 1]
         );
         // $this->call(UsersTableSeeder::class);
+        factory(\App\User::class)->create(
+            [
+            'firstname' => 'Cristian',
+            'secondname' => 'Atienza',
+            'email' => 'cristianatienza26@gmail.com',
+            'code' => null,
+            'password' => Hash::make('12345678'),
+            'actived' => 1,
+            'type' => 'u',
+            'email_confirmed' => 1,
+            'iscontact' => 1,
+            'company_id' => 1]
+        );
+
+        factory(\App\User::class)->create(
+            [
+            'firstname' => 'Agustin',
+            'secondname' => 'Guerrero',
+            'email' => 'tmotasanchez14@gmail.com',
+            'code' => null,
+            'password' => Hash::make('12345678'),
+            'actived' => 1,
+            'type' => 'u',
+            'email_confirmed' => 1,
+            'iscontact' => 1,
+            'company_id' => 2]
+        );
     }
 }

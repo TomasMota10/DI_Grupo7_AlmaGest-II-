@@ -159,13 +159,13 @@ class CompanyController extends Controller
         $files = [(public_path('/') . 'fichaEmpresa.pdf') , (public_path('/') . 'catalogo.pdf')];
 
         if(!file_exists($files[0])){
-            return redirect('/company')->with('message','PDF de la ficha de empresa no existe, asegúrese de tenerlo descargado.');
+            return redirect('/company')->with('message','PDF de ficha de empresa no existe, asegúrese de tenerlo descargado.');
         }else if(!file_exists($files[1])){
-            return redirect('/company')->with('message','PDF del catálogo no existe, asegúrese de tenerlo descargado.');
+            return redirect('/company')->with('message','PDF del catálogo de productos no existe, asegúrese de tenerlo descargado.');
         }
         
         Mail::send('content.mensajePDFs', [], function($message) use ($email,$files){
-            $message->to($email)->subject('PDFs en pruebas');
+            $message->to($email)->subject('PDFs enviados a las personas de contacto');
             foreach ($files as $file){
                 $message->attach($file);
             }

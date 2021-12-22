@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +12,7 @@
 <thead>
   <tr>
     <th colspan="4">Ficha de empresa</th>
-    <th>Código: 23052001</th>
+    <th><FONT COLOR="darkred">Código: 23052001</th>
   </tr>
 </thead>
 <tbody>
@@ -32,7 +32,7 @@
     <td>{{$company->cif}}</td>
   </tr>
   <tr>
-    <td colspan="2">Persona de Contacto: </td>
+    <td colspan="2">Persona de Contacto: ...</td>
     <td colspan="2">Cargo: Gerente</td>
   </tr>
   <tr>
