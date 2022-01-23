@@ -17,12 +17,25 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
+Route::get('/register/form','Auth\RegisterController@index');
+
 Route::get('/register/verify/{code}', 'Auth\RegisterController@verify');
 
+// USUARIOS 
 Route::resource('/usuarios','UserController');
 
+Route::get('/usuarios/activate/{id}','UserController@activate');
+
+Route::get('/usuarios/desactivate/{id}','UserController@desactivate');
+
+Route::get('/usuarios/{id}/softdelete','UserController@softDelete');
+
+// ARTICULOS
 Route::resource('/articulos','ArticleController');
 
+Route::get('/articulos/{id}/softdelete','ArticleController@softDelete');
+
+// COMPAÑIAS
 Route::resource('/company','CompanyController');
 
 Route::get('/company/ficha/{id}','CompanyController@downloadFicha');
@@ -31,15 +44,13 @@ Route::get('/company/catalogo/{id}', 'CompanyController@downloadCatalogo');
 
 Route::post('/company/sendEmail', 'CompanyController@sendEmail');
 
-Route::get('/usuarios/activate/{id}','UserController@activate');
+// PEDIDOS
+Route::get('/orders','OrderController@index');
 
-Route::get('/usuarios/desactivate/{id}','UserController@desactivate');
+// ALBARANES
+Route::get('/deliverynotes','DeliverynotesController@index');
 
-Route::get('/usuarios/{id}/softdelete','UserController@softDelete');
-
-Route::get('/articulos/{id}/softdelete','ArticleController@softDelete');
-
-Route::get('/register/form','Auth\RegisterController@index');
-
+// FACTURAS
+Route::get('/invoices','InvoicesController@index');
 
 #Route::get('/home', 'HomeController@index')->name('home');

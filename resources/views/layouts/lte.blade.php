@@ -74,23 +74,33 @@
     <div class="navbar-custom-menu">
     <ul class="sidebar-menu" data-widget="tree">
     <li>
-      <a href="/usuarios" style="{{auth()->user()->type === 'u' ? 'display:none' : '' }}">
+      <a href="/usuarios" style="{{auth()->user()->type == 'u' ? 'display:none' : '' }}">
         <i class="fa fa-users"></i><span>{{ __('Usuarios') }}</span>
       </a>
     </li>
     <li>
-      <a href="/articulos" style="{{auth()->user()->type === 'u' ? 'display:none' : '' }}">
+      <a href="/articulos" style="{{auth()->user()->type == 'u' ? 'display:none' : '' }}">
         <i class="fa fa-shopping-bag"></i><span>{{ __('Artículos') }}</span>
       </a>
     </li>
     <li>
-      <a href="/company" style="{{auth()->user()->type === 'a' ? 'display:none' : '' }}">
+      <a href="/company" style="{{auth()->user()->type == 'a' ? 'display:none' : '' }}">
         <i class="fa fa-briefcase"></i><span>{{ __('Empresa') }}</span>
       </a>
     </li>
     <li>
-      <a href="#" style="{{auth()->user()->type === 'a' ? 'display:none' : '' }}">
+      <a href="/orders" style="{{auth()->user()->type == 'a' ? 'display:none' : '' }}">
         <i class="fa fa-truck"></i><span>{{ __('Pedidos') }}</span>
+      </a>
+    </li>
+    <li>
+      <a href="/deliverynotes" style="{{auth()->user()->type == 'a' ? 'display:none' : '' }}">
+        <i class="fa fa-sticky-note"></i><span>{{ __('Albaranes') }}</span>
+      </a>
+    </li>
+    <li>
+      <a href="/invoices" style="{{auth()->user()->type == 'a' ? 'display:none' : '' }}">
+        <i class="fa fa-credit-card-alt"></i><span>{{ __(' Facturas') }}</span>
       </a>
     </li>
     <li>
