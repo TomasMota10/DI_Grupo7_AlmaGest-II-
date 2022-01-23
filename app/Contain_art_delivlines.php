@@ -10,5 +10,5 @@ class Contain_art_delivlines extends Model
 
     protected $fillable = [
         'article_id','delivery_lines_id','deleted'
-    ]
+    ];
 }
