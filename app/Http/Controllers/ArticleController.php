@@ -51,6 +51,22 @@ class ArticleController extends Controller
         //
     }
 
+    public function TestShop(Request $request){
+
+        $article = Articles::create([
+            'name' => $request['name'],
+            'price_min' => $request['price_min'],
+            'price_max' => $request['price_max'],
+            'color_name' => $request['color_name'],
+            'weight' => $request['weight'],
+            'size' => $request['size'],
+            'family_id' => $request['family_id'],
+            'description' => $request['description'],
+        ]);
+
+        $article->save();
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -165,6 +181,10 @@ class ArticleController extends Controller
      */
     public function destroy($id)
     {
+        $article = Articles::find($id);
+        $article->delete();
+
+        return redirect('/articulos/');
 
     }
 

@@ -21,7 +21,7 @@ Route::post('register','API\RegisterController@register');
 
 Route::post('login','API\RegisterController@login');
 
-// ORDERS API 
+// ORDERS --> API 
 
 Route::get('orders/{id}','API\OrderController@show');
 

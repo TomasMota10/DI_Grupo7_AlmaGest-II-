@@ -11,10 +11,10 @@ use App\Companies;
 class UserController extends Controller
 {
 
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
 
     /**
      * Display a listing of the resource.
@@ -42,7 +42,18 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user=User::create([
+            'firstname' => $request['firstname'],
+            'secondname' => $request['secondname'],
+            'company_id' => $request['company_id'],
+            'email' => $request['email'],
+            'password' => Hash::make($request['password']),
+            'code' => null,
+            'email_confirmed' => 0,
+
+        ]);
+
+        $user -> save();
     }
 
     /**
