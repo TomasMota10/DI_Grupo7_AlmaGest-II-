@@ -51,8 +51,7 @@ class ArticleController extends Controller
         //
     }
 
-    public function TestShop(Request $request){
-
+    public function storeTest(Request $request){
         $article = Articles::create([
             'name' => $request['name'],
             'price_min' => $request['price_min'],
@@ -185,7 +184,6 @@ class ArticleController extends Controller
         $article->delete();
 
         return redirect('/articulos/');
-
     }
 
     public function softDelete($id){

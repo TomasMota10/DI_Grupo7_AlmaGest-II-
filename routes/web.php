@@ -35,6 +35,8 @@ Route::resource('/articulos','ArticleController');
 
 Route::get('/articulos/{id}/softdelete','ArticleController@softDelete');
 
+Route::post('/articulosTest','ArticleController@storeTest');
+
 // COMPAÑIAS
 Route::resource('/company','CompanyController');
 
